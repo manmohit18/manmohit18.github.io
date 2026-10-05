@@ -1,0 +1,419 @@
+/* ===== THEME ===== */
+:root {
+    --background: #f6f3eb;
+    --surface: #ffffff;
+    --text: #202923;
+    --muted: #526057;
+    --accent: #245c43;
+    --highlight: #b74725;
+    --border: #d7ddd5;
+    --content-width: 68rem;
+}
+
+/* ===== BASE ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.me,
+nav,
+main,
+footer {
+    width: min(100% - 2rem, var(--content-width));
+    margin-inline: auto;
+}
+
+h1,
+h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.2;
+    overflow-wrap: break-word;
+}
+
+h1 {
+    margin: 0 0 1rem;
+    font-size: clamp(2.25rem, 6vw, 4.5rem);
+    letter-spacing: -0.04em;
+}
+
+h2 {
+    margin: 0 0 1.25rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+p {
+    max-width: 65ch;
+    margin: 0 auto 1rem;
+}
+
+a {
+    color: var(--accent);
+    text-underline-offset: 0.25em;
+}
+
+a:hover {
+    color: var(--highlight);
+}
+
+a:focus-visible {
+    outline: 3px solid var(--highlight);
+    outline-offset: 5px;
+    border-radius: 2px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+figure {
+    margin: 0;
+}
+
+[id] {
+    scroll-margin-top: 1.5rem;
+}
+
+/* ===== NAME AND PHOTOGRAPH ===== */
+.me {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(1rem, 4vw, 3rem);
+    padding-block: 3.5rem 2.5rem;
+}
+
+.name-block {
+    min-width: 0;
+}
+
+.name-block::before {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 0.3rem;
+    margin: 0 auto 1.5rem;
+    border-radius: 1rem;
+    background-color: var(--highlight);
+}
+
+.name-block p {
+    margin-bottom: 0;
+    color: var(--muted);
+    font-style: italic;
+}
+
+.header-photo {
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border: 3px solid var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 6px 18px rgba(32, 41, 35, 0.12);
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.75rem;
+    padding-block: 1rem;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+nav a {
+    display: inline-block;
+    padding-block: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ===== INTRODUCTION ===== */
+main {
+    padding-block: 1rem;
+}
+
+.hero {
+    padding-block: clamp(3rem, 7vw, 5rem);
+}
+
+.hero-text {
+    max-width: 48rem;
+    margin-inline: auto;
+}
+
+.eyebrow {
+    margin-bottom: 1.25rem;
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.hero-text h2 {
+    margin-bottom: 1.5rem;
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    letter-spacing: -0.035em;
+}
+
+.hero-text > p:not(.eyebrow) {
+    max-width: 58ch;
+    color: var(--muted);
+}
+
+/* ===== CONTACT BUTTON ===== */
+.contact-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--accent);
+    border-radius: 0.5rem;
+    background-color: var(--accent);
+    color: var(--surface);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.contact-button:hover {
+    border-color: var(--text);
+    background-color: var(--text);
+    color: var(--surface);
+}
+
+/* ===== SECTION LAYOUT ===== */
+main > [id]:not(.hero) {
+    padding-block: 3rem;
+    border-top: 1px solid var(--border);
+}
+
+main > [id] > h2 {
+    color: var(--accent);
+}
+
+/* A short decorative line beneath section headings */
+main > [id] > h2::after {
+    content: "";
+    display: block;
+    width: 2.5rem;
+    height: 3px;
+    margin: 0.85rem auto 0;
+    border-radius: 1rem;
+    background-color: var(--highlight);
+}
+
+main ul {
+    padding-left: 1.25rem;
+}
+
+main li {
+    margin-block: 0.5rem;
+}
+
+main li::marker {
+    color: var(--accent);
+}
+
+/* ===== ABOUT ME ===== */
+#about p {
+    max-width: 65ch;
+    color: var(--muted);
+}
+
+/* ===== EDUCATION ===== */
+#education > p {
+    max-width: 40rem;
+    margin: 1.25rem auto 0;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    background-color: var(--surface);
+}
+
+#education b {
+    display: inline-block;
+    margin-bottom: 0.25rem;
+    font-size: 1.05rem;
+}
+
+#education i {
+    color: var(--muted);
+    font-style: normal;
+}
+
+/* ===== SKILLS AND HOBBIES CARDS ===== */
+.card-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+    margin-top: 2rem;
+}
+
+.info-card {
+    min-width: 0;
+    padding: 1.5rem;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    box-shadow: 0 6px 20px rgba(32, 41, 35, 0.05);
+    text-align: left;
+}
+
+.info-card h3 {
+    margin: 0 0 1rem;
+    color: var(--text);
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+/* Rounded labels inside each card */
+.info-card .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.info-card .tags li {
+    max-width: 100%;
+    margin: 0;
+    padding: 0.4rem 0.85rem;
+    border-radius: 1.5rem;
+    background-color: #e8f0e9;
+    color: var(--accent);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+/* A warm accent distinguishes hobbies */
+.hobbies-grid .tags li {
+    background-color: #faece5;
+    color: var(--highlight);
+}
+
+/* Medium screens: two cards per row */
+@media (min-width: 40rem) {
+    .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Large screens: four skill cards and three hobby cards */
+@media (min-width: 64rem) {
+    .card-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .hobbies-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+/* ===== CONTACT ===== */
+#contact ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+#contact li {
+    max-width: 100%;
+    margin: 0;
+}
+
+#contact li a {
+    display: inline-block;
+    max-width: 100%;
+    padding: 0.7rem 1.25rem;
+    border: 1px solid var(--accent);
+    border-radius: 0.5rem;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+#contact li a:hover {
+    background-color: var(--accent);
+    color: var(--surface);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    padding-block: 2rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.875rem;
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
+/* ===== SMALL SCREENS ===== */
+@media (max-width: 40rem) {
+    .me {
+        gap: 1rem;
+        padding-block: 2.5rem 2rem;
+    }
+
+    .name-block h1 {
+        font-size: clamp(1.6rem, 6vw, 2.5rem);
+    }
+
+    .name-block p {
+        font-size: 0.875rem;
+    }
+
+    .header-photo {
+        width: 90px;
+        height: 90px;
+    }
+
+    nav {
+        gap: 0.25rem 1rem;
+    }
+
+    main > [id]:not(.hero) {
+        padding-block: 2.25rem;
+    }
+}
+
+/* Stack the header only on very narrow screens */
+@media (max-width: 22rem) {
+    .me {
+        flex-direction: column;
+    }
+}
+
+#about,
+#education,
+#skills,
+#hobbies,
+#contact {
+    margin-top: 2rem;
+}
